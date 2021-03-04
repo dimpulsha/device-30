@@ -11,6 +11,210 @@
 </head>
 
 <body>
+  <header>
+    <a href="">Logo</a>
+    <form action="" method="GET">
+      <label for="search-id"><span class="visually-hidden">Поиск по сайту</span></label>
+      <input type="search" name="user-search" id="search-id" placeholder="Поиск по сайту">
+    </form>
+    <ul class="user-control-list">
+      <li>
+        <a href="#nowhere">Войти</a>
+      </li>
+      <li>
+        <a href="#nowhere" aria-label="Переход в личный кабинет">Валентин Петухов</a>
+      </li>
+       <li>
+        <a href="#nowhere" aria-label="Выход из личного кабинета">Выйти</a>
+      </li>
+      <li>
+        <a href="#nowhere">Сравнить</a>
+      </li>
+      <li>
+        <a href="#nowhere">Корзина</a>
+      </li>
+    </ul>
+    <nav>
+      <ul class="site-nav-list">
+        <li>
+          <!--  это не ссылка - она никуда не ведет нужна фокуссировка и сразу автоматическое раскрытие-->
+          <span aria-label="Развернуть каталог" tabindex="0">Каталог</span>
+          <ul>
+            <li><a href="#nowhere">Виртуальная реальность</a></li>
+            <li> <a href="catalog.html">Фитнес-браслеты</a></li>
+            <li><a href="#nowhere">Квадрокоптер</a></li>
+            <li><a href="#nowhere">Моноподы для селфи</a></li>
+            <li><a href="#nowhere">Умные часы</a></li>
+            <li><a href="#nowhere">Экшн-камеры</a></li>
+          </ul>
+        </li>
+        <li><a href="#nowhere">Доставка</a></li>
+        <li><a href="#nowhere">Гарантия</a></li>
+        <li><a href="#nowhere">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Моноподы для селфи</h1>
+    <ul class="breadcrumbs">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="#nowhere">Каталог товаров</a></li>
+      <li><a>Моноподы для селфи</a></li>
+    </ul>
+    <section class="filter">
+      <h2>Фильтр:</h2>
+      <form action="https://echo.htmlacademy.ru" method="get">
+        <fieldset>
+          <legend>Стоимость</legend>
+          <label class="visually-hidden" for="price-range-id">Выбор диапазона стоимости</label>
+          <input type="range" name="price-range" id="price-range-id">
+          <label for="price-min-id"><span class="visually-hidden">Цена </span>от</label>
+          <input type="text" name="prive-min" id="prive-min-id" value="0">
+          <label for="price-max-id"><span class="visually-hidden">Цена </span>до</label>
+          <input type="text" name="prive-max" id="prive-max-id" value="5000">
+        </fieldset>
+        <fieldset>
+          <legend>Цвет</legend>
+          <ul>
+            <li>
+              <input type="checkbox" name="check-color" id="check-color-id1" value="black" checked>
+              <label for="check-color-id1">Черный</label>
+            </li>
+            <li>
+              <input type="checkbox" name="check-color" id="check-color-id2" value="white">
+              <label for="check-color-id2">Белый</label>
+            </li>
+            <li>
+              <input type="checkbox" name="check-color" id="check-color-id3" value="blue" checked>
+              <label for="check-color-id3">Синий</label>
+            </li>
+            <li>
+              <input type="checkbox" name="check-color" id="check-color-id4" value="red" checked>
+              <label for="check-color-id4">Красный</label>
+            </li>
+            <li>
+              <input type="checkbox" name="check-color" id="check-color-id5" value="pink">
+              <label for="check-color-id5">Розовый</label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend>Bluetooth</legend>
+          <ul>
+            <li>
+              <input type="radio" name="check-bluetooth" id="check-bluetooth-id1" value="yes" checked>
+              <label for="check-bluetooth-id1">Есть</label>
+            </li>
+            <li>
+              <input type="radio" name="check-bluetooth" id="check-bluetooth-id2" value="no">
+              <label for="check-bluetooth-id2">Нет</label>
+            </li>
+          </ul>
+        </fieldset>
+        <button type="submit">Показать</button>
+      </form>
+    </section>
+    <section class="sort">
+      <h2>Сортировка:</h2>
+      <ul class="sort-type-list">
+        <li><a href="#nowhere">По цене</a></li>
+        <li><a href="#nowhere">По типу</a></li>
+        <li><a href="#nowhere">По популярности</a></li>
+      </ul>
+      <ul class="sort-direction-list">
+        <li><a href="#nowhere">По возрастанию</a></li>
+        <li><a href="#nowhere">По убыванию</a></li>
+      </ul>
+    </section>
+    <section class="catalog-data">
+      <h2 class="visually-hidden">Товары каталога</h2>
+      <ul class="product-list">
+        <li>
+          <h3>Любительская селфи-палка</h3>
+          <p>1 100 руб.</p>
+          <img src="" alt="">
+          <div>
+            <button type="button">В корзину</button>
+            <button type="button">Добавить к сравнению</button>
+          </div>
+        </li>
+        <li>
+          <h3>Профессиональная селфи-палка</h3>
+          <p>1 500 руб.</p>
+          <img src="" alt="">
+          <div>
+            <button type="button">В корзину</button>
+            <button type="button">Добавить к сравнению</button>
+          </div>
+        </li>
+        <li>
+          <h3>Непотопляемая селфи-палка</h3>
+          <p>1 500 руб.</p>
+          <img src="" alt="">
+          <div>
+            <button type="button">В корзину</button>
+            <button type="button">Добавить к сравнению</button>
+          </div>
+        </li>
+        <li>
+          <h3>Селфи-палка «Следуй за мной»</h3>
+          <p>1 900 руб.</p>
+          <img src="" alt="">
+          <div>
+            <button type="button">В корзину</button>
+            <button type="button">Добавить к сравнению</button>
+          </div>
+        </li>
+      </ul>
+      <ul class="paddination-list">
+        <li><a href="#nowhere">Назад</a></li>
+        <li><a href="#nowhere">1</a></li>
+        <li><a href="#nowhere">2</a></li>
+        <li><a href="#nowhere">3</a></li>
+        <li><a href="#nowhere">Вперед</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <a href="#">Logo</span></a>
+    <address>г. Москва, ул. Строителей, 15</address>
+    <ul class="user-control-list">
+      <li>
+        <a href="#nowhere">Войти</a>
+      </li>
+      <li>
+        <a href="#nowhere" aria-label="Переход в личный кабинет">Валентин Петухов</a>
+      </li>
+       <li>
+        <a href="#nowhere" aria-label="Выход из личного кабинета">Выйти</a>
+      </li>
+      <li>
+        <a href="#nowhere">Сравнить</a>
+      </li>
+      <li>
+        <a href="#nowhere">Корзина</a>
+      </li>
+    </ul>
+    <ul class="footer-nav">
+      <li><a href="#nowhere">Доставка</a></li>
+      <li><a href="#nowhere">Гарантия</a></li>
+      <li><a href="#nowhere">Контакты</a></li>
+    </ul>
+    <a href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
+    <ul class="social-list">
+      <li class="social-item">
+        <a href="#nowhere"><span class="visually-hidden">Facebook</span></a>
+      </li>
+      <li class="social-item">
+        <a href="#nowhere"><span class="visually-hidden">Instagram</span></a>
+      </li>
+      <li class="social-item">
+        <a href="#nowhere"><span class="visually-hidden">Twitter</span></a>
+      </li>
+    </ul>
+    <a class="made-by" href="academy"><span class="visually-hidden">Сделано в HTML-Academy</span></a>
+  </footer>
+
 
 </body>
 

@@ -11,6 +11,237 @@
 </head>
 
 <body>
+  <header>
+    <a href="">Logo</a>
+    <form action="https://echo.htmlacademy.ru" method="GET">
+      <label for="search-id"><span class="visually-hidden">Поиск по сайту</span></label>
+      <input type="search" name="user-search" id="search-id" placeholder="Поиск по сайту">
+    </form>
+    <ul class="user-control-list">
+      <li>
+        <a href="#nowhere">Войти</a>
+      </li>
+      <li>
+        <a href="#nowhere" aria-label="Переход в личный кабинет">Валентин Петухов</a>
+      </li>
+       <li>
+        <a href="#nowhere" aria-label="Выход из личного кабинета">Выйти</a>
+      </li>
+      <li>
+        <a href="#nowhere">Сравнить</a>
+      </li>
+      <li>
+        <a href="#nowhere">Корзина</a>
+      </li>
+    </ul>
+    <nav>
+      <ul class="site-nav-list">
+        <li>
+          <!--  это не ссылка - она никуда не ведет нужна фокусировка и сразу автоматическое раскрытие-->
+          <span aria-label="Развернуть каталог" tabindex="0">Каталог</span>
+          <ul>
+            <li><a href="#nowhere">Виртуальная реальность</a></li>
+            <li> <a href="catalog.html">Фитнес-браслеты</a></li>
+            <li><a href="#nowhere">Квадрокоптер</a></li>
+            <li><a href="#nowhere">Моноподы для селфи</a></li>
+            <li><a href="#nowhere">Умные часы</a></li>
+            <li><a href="#nowhere">Экшн-камеры</a></li>
+          </ul>
+        </li>
+        <li><a href="#nowhere">Доставка</a></li>
+        <li><a href="#nowhere">Гарантия</a></li>
+        <li><a href="#nowhere">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1 class="visually-hidden">Интернет-магазин электроники и аксессуаров</h1>
+    <section class="promo">
+      <h2 class="visually-hidden">Наши лучшие предложения</h2>
+      <ul>
+        <li>
+          <h3 class="visually-hidden">Палка для селфи</h3>
+          <img src="" alt="">
+          <p class="slide-title">Делай селфи,<br> как Бен Стиллер!</p>
+          <p>Самая длинная палка для селфи доступна в нашем магазине.<br> Восемь (Восемь, Карл!) метров длиной и весом
+            всего 5 килограмм.</p>
+          <dl>
+            <dt>Длина палки</dt>
+            <dd>8,5 м</dd>
+            <dt>Вес палки</dt>
+            <dd>5 кг</dd>
+            <dt>Материал</dt>
+            <dd>Карбон</dd>
+          </dl>
+          <a href="catalog.html">Подробнее</a>
+        </li>
+        <li>
+          <h3 class="visually-hidden">Мотивируюший фитнес-браслет</h3>
+          <img src="" alt="">
+          <p class="slide-title">Худеем<br> правильно!</p>
+          <p>Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
+          <dl>
+            <!--  !!!! нет, это не dt ???-->
+            <dt>Без подзарядки</dt>
+            <dd>48 часов</dd>
+          </dl>
+          <a href="catalog.html">Подробнее</a>
+        </li>
+        <li>
+          <h3 class="visually-hidden">Квадрокоптер с лазерной установеой</h3>
+          <img src="" alt="">
+          <p class="slide-title">Порхает как бабочка, <br>жалит как пчела!</p>
+          <p>Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную
+            камеру.</p>
+          <dl>
+            <dt>Дальность полета</dt>
+            <dd>800 м</dd>
+            <dt>Радиус поражения</dt>
+            <dd>50 м</dd>
+          </dl>
+          <a href="catalog.html">Подробнее</a>
+        </li>
+      </ul>
+      <ul class="slide-control-list">
+        <!--  или aria-label -->
+        <li> <button type="button"><span class="visually-hidden">Слайд 1</span></button></li>
+        <li> <button type="button"><span class="visually-hidden">Сдайд 2</span></button></li>
+        <li> <button type="button"><span class="visually-hidden">Сдайд 3</span></button></li>
+      </ul>
+    </section>
+    <section class="category">
+      <h2 class="visually-hidden">Категории товаров</h2>
+      <ul class="category-list">
+        <li>
+          <a href="#nowhere">
+            <h3>Виртуальная реальность</h3>
+          </a>
+        </li>
+        <li>
+          <a href="catalog.html">
+            <h3>Моноподы для селфи</h3>
+          </a>
+        </li>
+        <li>
+          <a href="#nowhere">
+            <h3>Экшн-камеры</h3>
+          </a>
+        </li>
+        <li>
+          <a href="#nowhere">
+            <h3>Фитнес- браслеты</h3>
+          </a>
+        </li>
+        <li>
+          <a href="#nowhere">
+            <h3>Умные часы</h3>
+          </a>
+        </li>
+        <li>
+          <a href="#nowhere">
+            <h3>Квадрокоптеры</h3>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <section class="service">
+      <h2>Наш сервис</h2>
+      <ul class="tab-controls">
+        <li>
+          <a href="#nowhere">Доставка</a>
+        </li>
+        <li>
+          <a href="#nowhere">Гарантия</a>
+        </li>
+        <li>
+          <a href="#nowhere">Кредит</a>
+        </li>
+      </ul>
+      <ul class="service-slide-list">
+        <li>
+          <h3>Доставка</h3>
+          <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо
+            заработаем, поднимая его на ваш этаж.</p>
+        </li>
+        <li>
+          <h3>Гарантия</h3>
+          <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый.
+            Товар, не дом, конечно же.</p>
+        </li>
+        <li>
+          <h3>Кредит</h3>
+          <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия
+            кредита. Выгодные для нашего банка, разумеется.</p>
+        </li>
+
+      </ul>
+    </section>
+    <section class="manufacturer">
+      <h2 class="visually-hidden">Наши поставщики</h2>
+      <ul class="manufacturer-list">
+        <li><a href="#nowhere"><img src="" alt=""></a></li>
+        <li><a href="#nowhere"><img src="" alt=""></a></li>
+        <li><a href="#nowhere"><img src="" alt=""></a></li>
+        <li><a href="#nowhere"><img src="" alt=""></a></li>
+      </ul>
+    </section>
+    <section class="about">
+    <h2>О нас</h2>
+    <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
+    <p>Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными компаниями:</p>
+    <ul class="transport-list">
+      <li><a href="#nowhere">Деловые линии</a></li>
+      <li><a href="#nowhere">Автотрейдинг</a></li>
+      <li><a href="#nowhere">ЖелДорЭкспедиция</a></li>
+    </ul>
+<a href="#nowhere">Подробнее о нас</a>
+    </section>
+    <section class="contact">
+      <h2>Контакты</h2>
+      <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
+      <a href="карта"><img src="" alt=""></a>
+      <button type="button">Напишите нам</button>
+    </section>
+  </main>
+  <footer>
+    <a href="#">Logo</span></a>
+    <address>г. Москва, ул. Строителей, 15</address>
+    <ul class="user-control-list">
+      <li>
+        <a href="#nowhere">Войти</a>
+      </li>
+      <li>
+        <a href="#nowhere" aria-label="Переход в личный кабинет">Валентин Петухов</a>
+      </li>
+       <li>
+        <a href="#nowhere" aria-label="Выход из личного кабинета">Выйти</a>
+      </li>
+      <li>
+        <a href="#nowhere">Сравнить</a>
+      </li>
+      <li>
+        <a href="#nowhere">Корзина</a>
+      </li>
+    </ul>
+    <ul class="footer-nav">
+      <li><a href="#nowhere">Доставка</a></li>
+      <li><a href="#nowhere">Гарантия</a></li>
+      <li><a href="#nowhere">Контакты</a></li>
+    </ul>
+    <a href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
+    <ul class="social-list">
+      <li class="social-item">
+        <a href="#nowhere"><span class="visually-hidden">Facebook</span></a>
+      </li>
+      <li class="social-item">
+        <a href="#nowhere"><span class="visually-hidden">Instagram</span></a>
+      </li>
+      <li class="social-item">
+        <a href="#nowhere"><span class="visually-hidden">Twitter</span></a>
+      </li>
+    </ul>
+    <a class="made-by" href="academy"><span class="visually-hidden">Сделано в HTML-Academy</span></a>
+  </footer>
 
 </body>
 
