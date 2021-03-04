@@ -9,3 +9,4 @@
 node_modules/
 npm-debug.*
 _temp/
+device.code-workspace
