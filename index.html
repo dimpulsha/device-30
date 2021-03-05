@@ -15,61 +15,84 @@
 </head>
 
 <body>
-  <header>
-    <a href=""><img src="img/ico-svg/logo2.svg" alt="Логотип компании Device" width="163" height="35"></a>
-    <form action="https://echo.htmlacademy.ru" method="GET">
+  <header class="page-header">
+    <a class="header-logo" href=""><img src="img/ico-svg/logo2.svg" alt="Логотип компании Device" width="163"
+        height="35"></a>
+    <form class="user-search-form" action="https://echo.htmlacademy.ru" method="GET">
       <label for="search-id"><span class="visually-hidden">Поиск по сайту</span></label>
       <input type="search" name="user-search" id="search-id" placeholder="Поиск по сайту">
+      <button class="user-search-button" type="button">Найти</button>
     </form>
     <ul class="user-control-list">
-      <li>
-        <a href="#nowhere">Войти</a>
+      <li class="user-control-item">
+        <a class="user-login-control auth-user" href="#nowhere">Войти</a>
       </li>
-      <li>
-        <a href="#nowhere" aria-label="Переход в личный кабинет">Валентин Петухов</a>
+      <li class="user-control-item">
+        <a class="user-cabinet-control auth-user" href="#nowhere" aria-label="Переход в личный кабинет">Валентин
+          Петухов</a>
       </li>
-      <li>
-        <a href="#nowhere" aria-label="Выход из личного кабинета">Выйти</a>
+      <li class="user-control-item">
+        <a class="user-logout-control auth-user" href="#nowhere" aria-label="Выход из личного кабинета">Выйти</a>
       </li>
-      <li>
+      <li class="user-control-item">
         <a href="#nowhere">Сравнить</a>
       </li>
-      <li>
+      <li class="user-control-item">
         <a href="#nowhere">Корзина</a>
       </li>
     </ul>
-    <nav>
-      <ul class="site-nav-list">
-        <li>
-          <!--  это не ссылка - она никуда не ведет нужна фокусировка и сразу автоматическое раскрытие-->
-          <span aria-label="Развернуть каталог" tabindex="0">Каталог</span>
-          <ul>
-            <li><a href="#nowhere">Виртуальная реальность</a></li>
-            <li> <a href="catalog.html">Фитнес-браслеты</a></li>
-            <li><a href="#nowhere">Квадрокоптер</a></li>
-            <li><a href="#nowhere">Моноподы для селфи</a></li>
-            <li><a href="#nowhere">Умные часы</a></li>
-            <li><a href="#nowhere">Экшн-камеры</a></li>
+    <nav class="header-nav">
+      <ul class="header-nav-list">
+        <li class="header-nav-item nav-catalog-root">
+          <!--  ссылка - она никуда не ведет нужна фокусировка и сразу автоматическое раскрытие-->
+          <a class="header-nav-link" aria-label="Развернуть каталог">Каталог товаров</a>
+          <ul class="nav-catalog-list">
+            <!--  nth-child + grid ????? -->
+            <li class="nav-catalog-item">
+              <a href="#nowhere">Виртуальная реальность</a>
+            </li>
+            <li class="nav-catalog-item">
+              <a href="#nowhere">Моноподы для селфи</a>
+            </li>
+            <li class="nav-catalog-item">
+              <a href="#nowhere">Экшн-камеры</a>
+            </li>
+            <li class="nav-catalog-item">
+              <a href="catalog.html">Фитнес-браслеты</a>
+            </li>
+            <li class="nav-catalog-item">
+              <a href="#nowhere">Умные часы</a>
+            </li>
+            <li class="nav-catalog-item">
+              <a href="#nowhere">Квадрокоптер</a>
+            </li>
           </ul>
         </li>
-        <li><a href="#nowhere">Доставка</a></li>
-        <li><a href="#nowhere">Гарантия</a></li>
-        <li><a href="#nowhere">Контакты</a></li>
+        <li class="header-nav-item">
+          <a class="header-nav-link" href="#nowhere">Доставка</a>
+        </li>
+        <li class="header-nav-item">
+          <a class="header-nav-link" href="#nowhere">Гарантия</a>
+        </li>
+        <li class="header-nav-item">
+          <a class="header-nav-link" href="#nowhere">Контакты</a>
+        </li>
       </ul>
     </nav>
   </header>
   <main>
     <h1 class="visually-hidden">Интернет-магазин электроники и аксессуаров</h1>
+    <!-- может попробовать через наложение гридов??? -->
     <section class="promo">
       <h2 class="visually-hidden">Наши лучшие предложения</h2>
-      <ul>
-        <li>
+      <ul class="promo-slide-list">
+        <li class="promo-slide-item promo-slide-1">
           <h3 class="visually-hidden">Палка для селфи</h3>
           <img src="img/slider-1.png" alt="Профессиональные сеофи-палки различных расцветок и конструкций" width="384"
             height="486">
           <p class="slide-title">Делай селфи,<br> как Бен Стиллер!</p>
-          <p>Самая длинная палка для селфи доступна в нашем магазине.<br> Восемь (Восемь, Карл!) метров длиной и весом
-            всего 5 килограмм.</p>
+          <p class="promo-slide-text">Самая длинная палка для селфи доступна в нашем магазине.<br> Восемь (Восемь,
+            Карл!) метров длиной и весом всего 5 килограмм.</p>
           <dl>
             <dt>Длина палки</dt>
             <dd>8,5 м</dd>
@@ -78,28 +101,30 @@
             <dt>Материал</dt>
             <dd>Карбон</dd>
           </dl>
-          <a href="catalog.html">Подробнее</a>
+          <a class="button" href="catalog.html">Подробнее</a>
         </li>
-        <li>
+        <li class="promo-slide-item promo-slide-2">
           <h3 class="visually-hidden">Мотивируюший фитнес-браслет</h3>
           <img src="img/slider-2.png"
             alt="Черный фитнес-браслет стильного дизайна. Показывает на экране мотивирующую фразу" width="345"
             height="483">
           <p class="slide-title">Худеем<br> правильно!</p>
-          <p>Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
+          <p class="promo-slide-text">Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и
+            соблюдать диету.</p>
           <dl>
             <!--  !!!! нет, это не dt ???-->
-            <dt><span class="visually-hidden">Время работы</span>Без подзарядки</dt>
+            <dt><span class="visually-hidden">Время работы </span>Без подзарядки</dt>
             <dd>48 часов</dd>
           </dl>
-          <a href="catalog.html">Подробнее</a>
+          <a class="button" href="catalog.html">Подробнее</a>
         </li>
-        <li>
+        <li class="promo-slide-item promo-slide-3">
           <h3 class="visually-hidden">Квадрокоптер с лазерной установкой</h3>
           <img src="img/slider-3.png" alt="Четырехлопастный квадрокоптер с лазерной установкой. Кожух корпуса - белый"
             width="526" height="334">
           <p class="slide-title">Порхает как бабочка, <br>жалит как пчела!</p>
-          <p>Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную
+          <p class="promo-slide-text">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером,
+            замаскированным под стандартную
             камеру.</p>
           <dl>
             <dt>Дальность полета</dt>
@@ -107,148 +132,178 @@
             <dt>Радиус поражения</dt>
             <dd>50 м</dd>
           </dl>
-          <a href="catalog.html">Подробнее</a>
+          <a class="button" href="catalog.html">Подробнее</a>
         </li>
       </ul>
       <ul class="slide-control-list">
         <!--  или aria-label -->
-        <li> <button type="button"><span class="visually-hidden">Слайд 1</span></button></li>
-        <li> <button type="button"><span class="visually-hidden">Сдайд 2</span></button></li>
-        <li> <button type="button"><span class="visually-hidden">Сдайд 3</span></button></li>
+        <li class="slide-control-item">
+          <button class="button slide-control-1" type="button">
+            <span class="visually-hidden">Слайд 1</span>
+          </button>
+        </li>
+        <li class="slide-control-item">
+          <button class="button slide-control-2" type="button">
+            <span class="visually-hidden">Сдайд 2</span>
+          </button>
+        </li>
+        <li class="slide-control-item">
+          <button class="button slide-control-3" type="button">
+            <span class="visually-hidden">Сдайд 3</span>
+          </button>
+        </li>
       </ul>
     </section>
     <section class="category">
       <h2 class="visually-hidden">Категории товаров</h2>
       <ul class="category-list">
-        <li>
-          <a href="#nowhere">
+        <!-- class="catefory-item"  может не нужен? -->
+        <li class="catefory-item">
+          <a class="category-link" href="#nowhere">
             <h3>Виртуальная реальность</h3>
             <div class="category-ico-wrapper"></div>
           </a>
         </li>
-        <li>
-          <a href="catalog.html">
+        <li class="catefory-item">
+          <a class="category-link" href="catalog.html">
             <h3>Моноподы для селфи</h3>
             <div class="category-ico-wrapper"></div>
           </a>
         </li>
-        <li>
-          <a href="#nowhere">
+        <li class="catefory-item">
+          <a class="category-link" href="#nowhere">
             <h3>Экшн-камеры</h3>
             <div class="category-ico-wrapper"></div>
           </a>
         </li>
-        <li>
-          <a href="#nowhere">
+        <li class="catefory-item">
+          <a class="category-link" href="#nowhere">
             <h3>Фитнес- браслеты</h3>
             <div class="category-ico-wrapper"></div>
           </a>
         </li>
-        <li>
-          <a href="#nowhere">
+        <li class="catefory-item">
+          <a class="category-link" href="#nowhere">
             <h3>Умные часы</h3>
             <div class="category-ico-wrapper"></div>
           </a>
         </li>
-        <li>
-          <a href="#nowhere">
+        <li class="catefory-item">
+          <a class="category-link" href="#nowhere">
             <h3>Квадрокоптеры</h3>
             <div class="category-ico-wrapper"></div>
           </a>
-        </li>
+          </li>
       </ul>
     </section>
     <section class="service">
-      <h2>Наш сервис</h2>
-      <ul class="tab-controls">
+      <h2 class="visually-hidden">Наш сервис</h2>
+      <ul class="tab-control-list">
+        <!-- !!! посмотреть как сверстаны табы в навыке-->
         <li>
-          <a href="#nowhere">Доставка</a>
+          <a class="button service-button service-tab-active" href="#nowhere">Доставка</a>
         </li>
-        <li>
-          <a href="#nowhere">Гарантия</a>
+        <li class="tab-control-item">
+          <a class="button service-button" href="#nowhere">Гарантия</a>
         </li>
-        <li>
-          <a href="#nowhere">Кредит</a>
+        <li class="tab-control-item">
+          <a class="button service-button" href="#nowhere">Кредит</a>
         </li>
       </ul>
+      <!-- !!! Грид! наложение друг на друга -->
       <ul class="service-slide-list">
-        <li>
-          <h3>Доставка</h3>
-          <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо
+        <li class="service-desc-item">
+          <h3 class="service-desc-title">Доставка</h3>
+          <p class="service-desc-text">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно
+            бесплатно! Ведь мы неплохо
             заработаем, поднимая его на ваш этаж.</p>
           <div class="service-img-wrapper"></div>
         </li>
-        <li>
-          <h3>Гарантия</h3>
-          <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый.
+        <li class="service-desc-item">
+          <h3 class="service-desc-title">Гарантия</h3>
+          <p class="service-desc-text">Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте,
+            мы выдадим вам новый.
             Товар, не дом, конечно же.</p>
           <div class="service-img-wrapperr"></div>
         </li>
-        <li>
-          <h3>Кредит</h3>
-          <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия
+        <li class="service-desc-item">
+          <h3 class="service-desc-title">Кредит</h3>
+          <p class="service-desc-text">Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас
+            наиболее выгодные условия
             кредита. Выгодные для нашего банка, разумеется.</p>
           <div class="service-img-wrapper"></div>
         </li>
-
       </ul>
     </section>
     <section class="manufacturer">
       <h2 class="visually-hidden">Наши поставщики</h2>
       <ul class="manufacturer-list">
-        <li><a href="#nowhere"><img src="img/Dji-1.png" alt="Компания DJI" width="260" height="100"></a></li>
-        <li><a href="#nowhere"><img src="img/SPA-2.png" alt="Компания SP Gadgets" width="260" height="100"></a></li>
-        <li><a href="#nowhere"><img src="img/GoPro-3.png" alt="Компания GoPro" width="260" height="100"></a></li>
-        <li><a href="#nowhere"><img src="img/Vive-4.png" alt="Компания VIVE" width="260" height="100"></a></li>
+        <li class="manufacturer-item">
+          <a href="#nowhere"><img src="img/Dji-1.png" alt="Компания DJI" width="260" height="100"></a>
+        </li>
+        <li class="manufacturer-item">
+          <a href="#nowhere"><img src="img/SPA-2.png" alt="Компания SP Gadgets" width="260" height="100"></a>
+        </li>
+        <li class="manufacturer-item">
+          <a href="#nowhere"><img src="img/GoPro-3.png" alt="Компания GoPro" width="260" height="100"></a>
+        </li>
+        <li class="manufacturer-item">
+          <a href="#nowhere"><img src="img/Vive-4.png" alt="Компания VIVE" width="260" height="100"></a>
+        </li>
       </ul>
     </section>
     <section class="about">
-      <h2>О нас</h2>
-      <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
-      <p>Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными
-        компаниями:</p>
+      <h2 class="section-title">О нас</h2>
+<!-- попробовать не обнулять стандартные отступы -->
+      <p class="section-text">Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
+      <p class="section-text">Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими
+        транспортными  компаниями:</p>
       <ul class="transport-list">
         <li><a href="#nowhere">Деловые линии</a></li>
         <li><a href="#nowhere">Автотрейдинг</a></li>
         <li><a href="#nowhere">ЖелДорЭкспедиция</a></li>
       </ul>
-      <a href="#nowhere">Подробнее о нас</a>
+      <a class="button" href="#nowhere">Подробнее о нас</a>
     </section>
     <section class="contact">
-      <h2>Контакты</h2>
-      <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое
+      <h2 class="section-title">Контакты</h2>
+      <p class="section-text">Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить
+        работоспособность покупки. Всякое
         бывает.</p>
       <!--  не забыть карту -->
       <a href="#" target="_blank" rel="noopener noreferrer"> <img src="img/map.png"
           alt="Карта с адресом компании: г. Москва, ул. Строителей, 15" width="560" height="222"></a>
-      <button type="button">Напишите нам</button>
+      <button class="button" type="button">Напишите нам</button>
     </section>
   </main>
-  <footer>
-    <a href="#"><img src="img/ico-svg/logo-foot-2.svg" alt="Логотип компании Device" width="163" height="35"></a>
-    <address>г. Москва, ул. Строителей, 15</address>
+  <footer class="page-footer">
+    <a class="footer-logo" href="#"><img src="img/ico-svg/logo-foot-2.svg" alt="Логотип компании Device" width="163"
+        height="35"></a>
+    <address class="footer-text">г. Москва, ул. Строителей, 15</address>
+    <!--  сочетание grid, наложения слоев и display none -->
     <ul class="user-control-list">
-      <li>
-        <a href="#nowhere">Войти</a>
+      <li class="user-control-item">
+        <a class="user-login-control auth-user" href="#nowhere">Войти</a>
       </li>
-      <li>
-        <a href="#nowhere" aria-label="Переход в личный кабинет">Валентин Петухов</a>
+      <li class="user-control-item">
+        <a class="user-cabinet-control auth-user" href="#nowhere" aria-label="Переход в личный кабинет">Валентин
+          Петухов</a>
       </li>
-      <li>
-        <a href="#nowhere" aria-label="Выход из личного кабинета">Выйти</a>
+      <li class="user-control-item">
+        <a class="user-logout-control auth-user" href="#nowhere" aria-label="Выход из личного кабинета">Выйти</a>
       </li>
-      <li><a href="#nowhere">Сравнить</a>
+      <li class="user-control-item"><a href="#nowhere">Сравнить</a>
       </li>
-      <li>
+      <li class="user-control-item">
         <a href="#nowhere">Корзина</a>
       </li>
     </ul>
-    <ul class="footer-nav">
-      <li><a href="#nowhere">Доставка</a></li>
-      <li><a href="#nowhere">Гарантия</a></li>
-      <li><a href="#nowhere">Контакты</a></li>
+    <ul class="footer-nav-list">
+      <li class="footer-nav-item"><a href="#nowhere">Доставка</a></li>
+      <li class="footer-nav-item"><a href="#nowhere">Гарантия</a></li>
+      <li class="footer-nav-item"><a href="#nowhere">Контакты</a></li>
     </ul>
-    <a href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
+    <a class="footer-text" href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
     <ul class="social-list">
       <li class="social-item">
         <a href="#nowhere"><span class="visually-hidden">Facebook</span></a>
@@ -262,22 +317,22 @@
     </ul>
     <a class="made-by" href="academy"><span class="visually-hidden">Сделано в HTML-Academy</span></a>
   </footer>
-  <section class="modal">
+  <section class="modal modal-msg">
     <h2 class="visually-hidden">Форма обратной связи</h2>
     <form action="https://echo.htmlacademy.ru" method="post">
-      <label for="name-id">Ваше имя:</label>
+      <label class="modal-label" for="name-id">Ваше имя:</label>
       <input type="text" name="name" id="name-id" placeholder="Имя Фамилия" required>
-      <label for="email-id">Ваше email:</label>
+      <label class="modal-label" for="email-id">Ваше email:</label>
       <input type="email" name="email" id="email-id" placeholder="email@example.com" required>
-      <label for="msg-text-id"></label>
+      <label class="modal-label" for="msg-text-id"></label>
       <textarea name="msg-text" id="msg-text-id" cols="30" rows="4" placeholder="В свободной форме"></textarea>
-      <button type="submit">Отправить</button>
+      <button class="button" type="submit">Отправить</button>
     </form>
-    <button type="button" aria-label="Закрыть окно"></button>
+    <button class="modal-close" type="button" aria-label="Закрыть окно"></button>
   </section>
-  <section class="modal">
+  <section class="modal modal-map">
     <h2 class="visually-hidden">Как к нам добраться</h2>
-    <button type="button" aria-label="Закрыть окно"></button>
+    <button class="modal-close" type="button" aria-label="Закрыть окно"></button>
   </section>
 
 </body>

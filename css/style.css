@@ -1,0 +1,284 @@
+/* Font */
+
+@font-face {
+  font-family: "Gilroy";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../fonts/gilroylight.woff2") format("woff2"), url("../fonts/gilroylight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-weight: 800;
+  font-style: normal;
+  src: url("../fonts/gilroyextrabold.woff2") format("woff2"), url("../fonts/gilroyextrabold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/opensans.woff2") format("woff2"), url("../fonts/opensans.woff2") format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../fonts/opensanslight.woff2") format("woff2"), url("../fonts/opensanslight.woff2") format("woff");
+}
+
+/* colors */
+
+:root {
+  /*  названия цветов */
+  --basic-black: #000000;
+  --basic-dark: #363636;
+  --basic-white: #FFFFFF;
+  --basic-grey: #464646;
+  --basic-half-grey: #7E7E7E;
+  --basic-grey-light: #E5E5E5;
+  --special-yellow: #F7E296;
+  --special-green: #91C92F;
+  --special-yellow-dark: #F0C52E;
+  --black-rgba-07: rgba(0, 0, 0, 0.7);
+  --black-rgba-07: rgba(0, 0, 0, 0.6);
+  --black-rgba-07: rgba(0, 0, 0, 0.4);
+  --black-rgba-07: rgba(0, 0, 0, 0.3);
+  --white-rgba-07: rgba(255, 255, 255, 0.7);
+  --white-rgba-06: rgba(255, 255, 255, 0.6);
+  --white-rgba-04: rgba(255, 255, 255, 0.4);
+  --white-rgba-03: rgba(255, 255, 255, 0.3);
+  /* цвет по функциональности */
+  /* текст */
+  --basic-text: var(--basic-black);
+  --footer-basic-text: var(--basic-white);
+  --footer-user-link-text: var(--white-rgba-07);
+  --footer-user-link-text-hover: var(--basic-white);
+  --footer-user-link-text-active: var(--white-rgba-03);
+  --modal-placeholder-text: var(--white-rgba-04);
+  --search-placeholder-text: var(--white-rgba-03);
+  --exit-link-text: var(--black-rgba-03);
+  --breadcrumbs-text: var(--black-rgba-03);
+  --inactive-text: var(--black-rgba-03);
+  --header-bg: var(--special-yellow);
+  --category-ico-bg: var(--special-yellow);
+  --category-ico-action-bg: var(--special-yellow-dark);
+  --serv-tab-active-text: var(--special-yellow);
+  /*
+--pagination-txtbtn-active:var(--black-rgba-03);
+--pagination-numbtn-hover:var(--black-rgba-06);
+--pagination-numbtn-active:var(--basic-black); */
+  /* заливка */
+}
+
+/* инициализация стилей */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 28px;
+  color: var(--basic-text);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.button {
+  display: block;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* header */
+
+.page-header {
+  /* пока временно */
+  background-color: var(--header-bg);
+}
+
+.user-search-form {
+  line-height: 20px;
+}
+
+.user-search-button {
+  text-transform: uppercase;
+}
+
+.user-control-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 20px;
+}
+
+.header-nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header-nav-link {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.nav-catalog-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 20px;
+}
+
+.user-control-item a:hover, .user-control-item a:focus, .header-nav-link:hover, .header-nav-link:focus, .nav-catalog-list a:hover, .nav-catalog-list a:focus {
+  opacity: 0.6;
+}
+
+.user-control-item a:active, .header-nav-link:active, .nav-catalog-list a:active {
+  opacity: 0.3;
+}
+
+.promo-slide-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slide-title {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 47px;
+  line-height: 58px;
+}
+
+.promo-slide-text {
+  line-height: 20px;
+}
+
+.promo-slide-item dt {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+}
+
+.promo-slide-item dd {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 42px;
+  letter-spacing: 0.1em;
+}
+
+.slide-control-item {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.category-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.category-link h3 {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.05em;
+}
+
+.category-ico-wrapper {
+  background-color: var(--category-ico-bg);
+  /* временно */
+  /* width: 30px;
+height: 30px; */
+}
+
+.category-link:hover .category-ico-wrapper, .category-link:active .category-ico-wrapper {
+  background-color: var(--category-ico-action-bg);
+}
+
+.category-link:active h3 {
+  opacity: 0.3;
+}
+
+.tab-control-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-button:active {
+  color: var(--serv-tab-active-text);
+}
+
+.service-slide-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-desc-title {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 47px;
+  line-height: 58px;
+  letter-spacing: 0.2em;
+}
+
+.service-desc-text {
+  line-height: 30px;
+  letter-spacing: 0.1em;
+}
+
+.section-title {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 47px;
+  line-height: 58px;
+  letter-spacing: 0.2em;
+}
+
+.transport-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+}
