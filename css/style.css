@@ -41,10 +41,18 @@
   --special-yellow: #F7E296;
   --special-green: #91C92F;
   --special-yellow-dark: #F0C52E;
+  --special-grey: #F2F2F2;
+  --special-grey-dark: #EAEAEA;
+  --special-grey-more-dark: #A6A6A6;
+  --special-half-grey: #D9D9D9;
+  --special-red: #F6DADA;
   --black-rgba-07: rgba(0, 0, 0, 0.7);
-  --black-rgba-07: rgba(0, 0, 0, 0.6);
-  --black-rgba-07: rgba(0, 0, 0, 0.4);
-  --black-rgba-07: rgba(0, 0, 0, 0.3);
+  --black-rgba-06: rgba(0, 0, 0, 0.6);
+  --black-rgba-04: rgba(0, 0, 0, 0.4);
+  --black-rgba-05: rgba(0, 0, 0, 0.5);
+  --black-rgba-03: rgba(0, 0, 0, 0.3);
+  --black-rgba-02: rgba(0, 0, 0, 0.2);
+  --black-rgba-01: rgba(0, 0, 0, 0.1);
   --white-rgba-07: rgba(255, 255, 255, 0.7);
   --white-rgba-06: rgba(255, 255, 255, 0.6);
   --white-rgba-04: rgba(255, 255, 255, 0.4);
@@ -65,13 +73,27 @@
   --category-ico-bg: var(--special-yellow);
   --category-ico-action-bg: var(--special-yellow-dark);
   --serv-tab-active-text: var(--special-yellow);
-  --footer-bg:var(--basic-dark);
-  --footer-nav-link:var(--basic-white);
-
-  /*
---pagination-txtbtn-active:var(--black-rgba-03);
---pagination-numbtn-hover:var(--black-rgba-06);
---pagination-numbtn-active:var(--basic-black); */
+  --footer-bg: var(--basic-dark);
+  --footer-nav-link: var(--basic-white);
+  --breadcrumbs-text: var(--black-rgba-03);
+  --breadcrumbs-hover-text: var(--black-rgba-06);
+  --breadcrumbs-active-text: var(--black-rgba-01);
+  --modal-bg: var(--basic-white);
+  --modal-input-bg: var(--special-grey);
+  --modal-input-hover-bg: var(--special-grey-dark);
+  --modal-input-active-bg: var(--basic-white);
+  --modal-input-active-outline: var(--special-yellow);
+  --modal-input-error-bg: var(--special-red);
+  --filter-disabled-option: var(--special-grey-more-dark);
+  --sort-inactive: var(--black-rgba-03);
+  --sort-hover: var(--black-rgba-06);
+  --compare-button: var(--black-rgba-05);
+  --compare-button-active: var(--black-rgba-02);
+  --page-txtbtn-active: var(--black-rgba-03);
+  --page-txtbtn-acive-bg: var(--special-half-grey);
+  --page-numbtn: var(--black-rgba-03);
+  --page-numbtn-hover: var(--black-rgba-06);
+  --page-numbtn-active: var(--basic-black);
   /* заливка */
 }
 
@@ -100,16 +122,56 @@ a {
 
 .button {
   display: block;
-  text-align: center;
   border: none;
+  text-align: center;
   background-color: transparent;
-  font-family: Gilroy;
+}
+
+/* !!!тут сверстать поведение главной кнопки
+и расставить по страницам */
+
+.page-button {
+  font-family: "Gilroy", Arial, sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 18px;
   line-height: 22px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+}
+
+/* !!! странное поведение - пропадает текст - надо разобраться позже - при верстке фона,
+возможно надо заменить на color*/
+
+.page-button:active {
+  opacity: 0.3;
+}
+
+/* тот же шрифт, но иное поведение */
+
+.service-button {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.compare-button {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  color: var(--compare-button);
+}
+
+.compare-button:hover {
+  color: var(--basic-text);
+}
+
+.compare-button:active {
+  color: var(--compare-button-active);
 }
 
 /* header */
@@ -285,28 +347,33 @@ height: 30px; */
   font-weight: 800;
   font-size: 16px;
 }
-.page-footer{
+
+.page-footer {
   background-color: var(--footer-bg);
   color: var(--footer-basic-text);
 }
+
 .page-footer address {
   font-style: normal;
 }
-.footer-control-list{
+
+.footer-control-list {
   margin: 0;
   padding: 0;
   list-style: none;
   line-height: 20px;
-  color:var(--footer-user-link) ;
+  color: var(--footer-user-link);
 }
-.footer-control-list a:hover,  .footer-control-list a:focus{
+
+.footer-control-list a:hover, .footer-control-list a:focus {
   color: var(--footer-user-link-hover);
 }
 
-.footer-control-list a:active{
+.footer-control-list a:active {
   color: var(--footer-user-link-active);
 }
-.footer-nav-list{
+
+.footer-nav-list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -320,10 +387,205 @@ height: 30px; */
   color: var(--footer-basic-text);
 }
 
-.footer-nav-list a:hover, .footer-nav-list a:focus{
+.footer-nav-list a:hover, .footer-nav-list a:focus {
   opacity: 0.6;
 }
-.footer-nav-list a:active{
+
+.footer-nav-list a:active {
   opacity: 0.3;
 }
 
+/* страница каталога */
+
+.catalog-title {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 47px;
+  line-height: 58px;
+}
+
+.breadcrumbs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--breadcrumbs-text);
+}
+
+.breadcrumbs a:hover {
+  color: var(--breadcrumbs-hover-text);
+}
+
+.breadcrumbs a:active {
+  color: var(--breadcrumbs-active-text);
+}
+
+.filter-title {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.product-filter label {
+  font-size: 14px;
+  line-height: 19px;
+}
+
+/* !!!если буду стилизовать по спискам, то надо сброс отступов перенести в списки */
+
+.product-filter ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input:disabled+label {
+  color: var(--filter-disabled-option);
+}
+
+.filter-legend {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.1em;
+}
+
+.price-fieldset {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.sort-type-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--sort-inactive);
+}
+
+.sort-type-list a.selected {
+  color: var(--basic-text);
+}
+
+.sort-type-list a:hover, .sort-type-list a:focus {
+  color: var(--sort-hover);
+}
+
+.sort-type-list a:active {
+  color: var(--basic-text);
+}
+
+.sort-direction-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+/* Каталог */
+
+.product-title {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.05em;
+}
+
+.product-price {
+  margin: 0;
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+}
+
+.pagination-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.pagination-item a.numpage {
+  color: var(--page-numbtn);
+}
+
+.pagination-item a.numpage.selected {
+  color: var(--basic-text);
+}
+
+.pagination-item a.numpage:hover {
+  color: var(--page-numbtn-hover);
+}
+
+.pagination-item a.numpage:active {
+  color: var(--basic-text);
+}
+
+/* похоже, что не работает. Возможно перенести на уровень li */
+
+.pagination-item .textpage:hover {
+  background-color: var(--page-txtbtn-active-bg);
+}
+
+.pagination-item .textpage:active {
+  color: var(--page-txtbtn-active);
+  background-color: var(--page-txtbtn-active-bg);
+}
+
+/* всплывающие окна */
+
+/* попробовать поля обратной связи сделать унифицированными */
+
+.modal {
+  background-color: var(--modal-bg);
+  box-shadow: (0px 10px 16px rgba(0, 0, 0, 0.15));
+}
+
+.modal-msg label {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.modal-msg input {
+  font-size: 14px;
+  line-height: 19px;
+  background-color: var(--modal-input-bg)
+}
+
+.modal-msg input:hover {
+  background-color: var(--modal-input-hover-bg);
+}
+
+.modal-msg input:active, .modal-msg input:focus, .modal-msg textarea:active, .modal-msg textarea:focus {
+  background-color: var(--modal-input-active-bg);
+  outline: 2px solid var(--modal-input-active-outline);
+}
+
+.modal-msg input.error {
+  background-color: var(--modal-input-hover-bg);
+}
