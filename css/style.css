@@ -94,10 +94,16 @@
   --page-numbtn: var(--black-rgba-03);
   --page-numbtn-hover: var(--black-rgba-06);
   --page-numbtn-active: var(--basic-black);
+  --service-bg: var(--basic-grey-light);
   /* заливка */
 }
 
 /* инициализация стилей */
+
+html {
+  /* для грида */
+  height: 100%;
+}
 
 body {
   margin: 0;
@@ -108,6 +114,12 @@ body {
   font-size: 15px;
   line-height: 28px;
   color: var(--basic-text);
+  /* для грида */
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 194px 146px 1fr min-content;
+  align-content: start;
 }
 
 img {
@@ -119,6 +131,20 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.page-content h1, .page-content h2, .page-content h3 {
+  margin: 0;
+}
+
+.container {
+  width: 1160px;
+  padding: 0 20px;
+  margin: 0 auto;
+  /* сетка */
+  outline: 1px solid salmon;
+}
+
+/* -----------  Кнопки  ----------------*/
 
 .button {
   display: block;
@@ -174,11 +200,22 @@ a {
   color: var(--compare-button-active);
 }
 
-/* header */
+/* !!!! --------- header  -------------*/
 
 .page-header {
-  /* пока временно */
-  background-color: var(--header-bg);
+  grid-column: 1 / -1;
+  grid-row: 1 / 3;
+  background-image: linear-gradient( var(--basic-white) 40px, var(--header-bg) 40px, var(--header-bg) 100%);
+}
+
+.header-data-wrapper {
+  padding: 20px 60px 0;
+}
+
+.header-user-control {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
 }
 
 .user-search-form {
@@ -190,6 +227,7 @@ a {
 }
 
 .user-control-list {
+  display: flex;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -197,6 +235,7 @@ a {
 }
 
 .header-nav-list {
+  display: flex;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -212,12 +251,55 @@ a {
   text-transform: uppercase;
 }
 
+.nav-catalog-root {
+  position: relative;
+}
+
+.catalog-wrapper {
+  position: absolute;
+  width: 1040px;
+  /* height: 146px; */
+}
+
 .nav-catalog-list {
+  /* !!! Переделать через focus-within */
+  /**/
+  /* display: block; */
+  /* width: 100%; */
+  /*height: 100%; */
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start; */
+  /*  align-items: flex-end; */
+  /*   minmax(max-content, 1fr) */
+  display: none;
+  grid-template-columns: repeat(5, max-content);
+  /*  grid-template-columns: max-content max-content max-content max-content 1fr 1fr ; */
+  grid-template-rows: repeat(3, 1fr);
+  column-gap: 61px;
   margin: 0;
   padding: 0;
+  padding-right: 70%;
   list-style: none;
   line-height: 20px;
+  outline: 2px solid slateblue;
 }
+
+/* позже убрать эту штуку - восле переделки на :focus-within*/
+
+.nav-catalog-list.open {
+  display: grid;
+}
+
+.nav-catalog-item {
+  margin-bottom: 20px;
+  /*   margin-right: 61px; */
+}
+
+/* .nav-catalog-item:last-child{
+  margin-right: auto;
+} */
 
 .user-control-item a:hover, .user-control-item a:focus, .header-nav-link:hover, .header-nav-link:focus, .nav-catalog-list a:hover, .nav-catalog-list a:focus {
   opacity: 0.6;
@@ -227,10 +309,46 @@ a {
   opacity: 0.3;
 }
 
+/* !!! ------- MAIN ----------- */
+
+.page-content {
+  grid-column: 1 / -1;
+  grid-row: 2 / 4;
+}
+
+/* !!!! --------- PROMO -------- */
+
+.promo {
+  position: relative;
+  margin-bottom: 76px;
+}
+
 .promo-slide-list {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.promo-slide-item {
+  display: none;
+}
+
+.promo-slide-item.selected {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+}
+
+/* !!!! у разных слайдов разная центровка */
+
+.promo-slide-1 .promo-slide-img-wrap {
+  text-align: center;
+}
+
+.promo-slide-content-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .slide-title {
@@ -245,7 +363,20 @@ a {
   line-height: 20px;
 }
 
+.promo-slide-content-wrap dl {
+  /*   margin: 0;
+  padding: 0; */
+  order: 2;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  column-gap: 64px;
+}
+
+/* !!!!!!!!! .definition-item  - flex */
+
 .promo-slide-item dt {
+  /*  margin: 0;
+  padding: 0; */
   font-family: "Gilroy", Arial, sans-serif;
   font-style: normal;
   font-weight: 300;
@@ -255,6 +386,8 @@ a {
 }
 
 .promo-slide-item dd {
+  margin: 0;
+  padding: 0;
   font-family: "Gilroy", Arial, sans-serif;
   font-style: normal;
   font-weight: 300;
@@ -263,13 +396,22 @@ a {
   letter-spacing: 0.1em;
 }
 
-.slide-control-item {
+.slide-control-list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+/* !!!! -------- CATEGORY ------------ */
+
+.category {
+  margin-bottom: 49px;
+}
+
 .category-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 40px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -299,7 +441,20 @@ height: 30px; */
   opacity: 0.3;
 }
 
+/* !!!! ---------- SERVICE ---------- */
+
+.service {
+  background-image: linear-gradient( var( --basic-white) 115px, var(--service-bg) 115px, var(--service-bg) 100%);
+}
+
+.service-content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 40px;
+}
+
 .tab-control-list {
+  grid-column: 1 / 2;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -310,9 +465,18 @@ height: 30px; */
 }
 
 .service-slide-list {
+  grid-column: 2 / -1;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.service-desc-item {
+  display: none;
+}
+
+.service-desc-item.selected {
+  display: block;
 }
 
 .service-desc-title {
@@ -338,6 +502,35 @@ height: 30px; */
   letter-spacing: 0.2em;
 }
 
+/* !!!!!!!! ------------- ПОСТАВЩИКИ -------------- */
+
+.manufacturer-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.manufacturer-item img {
+  filter: grayscale(1);
+  opacity: 0.3;
+}
+
+.manufacturer-item:hover img, .manufacturer-item:focus-within img, .manufacturer-item a:active img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+/* !!!!!!!!!---------- О НАС и КОНТАКТЫ --------- */
+
+.about-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+}
+
 .transport-list {
   margin: 0;
   padding: 0;
@@ -348,16 +541,28 @@ height: 30px; */
   font-size: 16px;
 }
 
+/* !!! ---------  FOOTER -------- */
+
 .page-footer {
+  grid-column: 1 / -1;
+  grid-row: 4 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "logo ucntrl ucntrl ucntrl" "addr nav nav tel" "nan soc soc made";
+  column-gap: 40px;
+  row-gap: 20px;
   background-color: var(--footer-bg);
   color: var(--footer-basic-text);
 }
 
 .page-footer address {
+  grid-area: addr;
   font-style: normal;
 }
 
 .footer-control-list {
+  grid-area: ucntrl;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -374,6 +579,7 @@ height: 30px; */
 }
 
 .footer-nav-list {
+  grid-area: nav;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -395,7 +601,22 @@ height: 30px; */
   opacity: 0.3;
 }
 
-/* страница каталога */
+.footer-tel-link {
+  grid-area: tel;
+}
+
+.social-list {
+  grid-area: soc;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.made-by {
+  grid-area: made;
+}
+
+/* --------- страница каталога --------- */
 
 .catalog-title {
   font-family: "Gilroy", Arial, sans-serif;
@@ -559,6 +780,7 @@ input:disabled+label {
 /* попробовать поля обратной связи сделать унифицированными */
 
 .modal {
+  display: none;
   background-color: var(--modal-bg);
   box-shadow: (0px 10px 16px rgba(0, 0, 0, 0.15));
 }
