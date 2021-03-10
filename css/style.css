@@ -183,6 +183,7 @@ a {
 и расставить по страницам */
 
 .page-button {
+  padding: 9px 5px;
   font-family: "Gilroy", Arial, sans-serif;
   font-style: normal;
   font-weight: 800;
@@ -190,6 +191,12 @@ a {
   line-height: 22px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+}
+
+.promo-slide-item .button {
+  width: 210px;
+  margin-bottom: 51px;
+  outline: 2px solid palegreen;
 }
 
 /* !!! странное поведение - пропадает текст - надо разобраться позже - при верстке фона,
@@ -471,7 +478,6 @@ a {
   line-height: 20px;
   text-transform: none;
   outline: 2px solid slateblue;
-
 }
 
 .nav-catalog-item {
@@ -536,19 +542,29 @@ a {
   column-gap: 40px;
 }
 
+/* для понимания сетки */
+
+.promo-slide-img-wrap {
+  outline: 2px solid olivedrab;
+}
+
 /* !!!! у разных слайдов разная центровка */
 
-.promo-slide-1 .promo-slide-img-wrap {
+/* не такие отступы. просто  явно задает расположение конкретной картинки
+ .promo-slide-1 .promo-slide-img-wrap {
   text-align: center;
-}
+} */
 
 .promo-slide-content-wrap {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  outline: 2px solid olivedrab;
 }
 
 .slide-title {
+  margin-top: 110px;
+  margin-bottom: 30px;
   font-family: "Gilroy", Arial, sans-serif;
   font-style: normal;
   font-weight: 800;
@@ -557,6 +573,8 @@ a {
 }
 
 .promo-slide-text {
+  margin-top: 0;
+  margin-bottom: 51px;
   line-height: 20px;
 }
 
@@ -569,7 +587,10 @@ a {
   column-gap: 64px;
 }
 
-/* !!!!!!!!! .definition-item  - flex */
+.definition-item {
+  display: flex;
+  flex-direction: column-reverse;
+}
 
 .promo-slide-item dt {
   /*  margin: 0;
@@ -585,6 +606,7 @@ a {
 .promo-slide-item dd {
   margin: 0;
   padding: 0;
+  margin-bottom: 15px;
   font-family: "Gilroy", Arial, sans-serif;
   font-style: normal;
   font-weight: 300;
@@ -593,10 +615,27 @@ a {
   letter-spacing: 0.1em;
 }
 
+/* настройки кнопок слайдера */
+
 .slide-control-list {
+  position: absolute;
+  top: 357px;
+  right: 70px;
+  display: flex;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.slide-control-item {
+  margin-right: 18px;
+}
+
+/* индивидуальные стили для слайдов */
+
+.promo-slide-1 .promo-slide-img {
+  margin-top: 17px;
+  margin-left: 89px;
 }
 
 /* !!!! -------- CATEGORY ------------ */
@@ -616,6 +655,13 @@ a {
   list-style: none;
 }
 
+.category-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* outline: 2px solid darkred; */
+}
+
 .category-link h3 {
   font-family: "Gilroy", Arial, sans-serif;
   font-style: normal;
@@ -626,17 +672,58 @@ a {
 }
 
 .category-ico-wrapper {
+  width: 160px;
+  height: 160px;
+  margin-bottom: 38px;
   background-color: var(--category-ico-bg);
   /* временно */
   /* width: 30px;
 height: 30px; */
 }
 
+/* иконки для категорий товаров */
+
+.category-ico-wrapper.v-reality {
+  background-image: url("../img/ico-svg/popular-1-2.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.category-ico-wrapper.monopod {
+  background-image: url("../img/ico-svg/popular-2.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.category-ico-wrapper.action-camera {
+  background-image: url("../img/ico-svg/popular-3-2.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.category-ico-wrapper.fitness-bracelet {
+  background-image: url("../img/ico-svg/popular-4-2.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.category-ico-wrapper.smart-watch {
+  background-image: url("../img/ico-svg/popular-5-2.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.category-ico-wrapper.quadcopter {
+  background-image: url("../img/ico-svg/popular-6-2.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
 .category-link:hover .category-ico-wrapper, .category-link:active .category-ico-wrapper {
   background-color: var(--category-ico-action-bg);
 }
 
-.category-link:active h3 {
+.category-link:active {
   opacity: 0.3;
 }
 
@@ -716,8 +803,14 @@ height: 30px; */
   padding: 0;
   list-style: none;
 }
+.manufacturer-item a{
+  display: block;
+  width: 260px;
+  height: 100px;
+}
 
 .manufacturer-item img {
+  object-fit: contain;
   filter: grayscale(1);
   opacity: 0.3;
 }

@@ -95,10 +95,11 @@
       <h2 class="visually-hidden">Наши лучшие предложения</h2>
       <ul class="promo-slide-list">
        <!--  promo-slide-1 selected  -->
-        <li class="promo-slide-item promo-slide-1">
+        <li class="promo-slide-item promo-slide-1 selected">
+ <!-- этот враппер нужен для грида -->
           <div class="promo-slide-img-wrap">
             <h3 class="visually-hidden">Палка для селфи</h3>
-            <img src="img/slider-1.png" alt="Профессиональные сеофи-палки различных расцветок и конструкций" width="384"
+            <img class="promo-slide-img" src="img/slider-1.png" alt="Профессиональные сеофи-палки различных расцветок и конструкций" width="384"
               height="486">
           </div>
           <div class="promo-slide-content-wrap">
@@ -172,17 +173,17 @@
         <!--  перевести на aria-label -->
         <li class="slide-control-item">
           <button class="button slide-control-1" type="button">
-            <span class="visually-hidden">Слайд 1</span>
+            <span class="visually-hidden">Слайд 1</span>Х
           </button>
         </li>
         <li class="slide-control-item">
           <button class="button slide-control-2" type="button">
-            <span class="visually-hidden">Сдайд 2</span>
+            <span class="visually-hidden">Сдайд 2</span>Х
           </button>
         </li>
         <li class="slide-control-item">
           <button class="button slide-control-3" type="button">
-            <span class="visually-hidden">Сдайд 3</span>
+            <span class="visually-hidden">Сдайд 3</span>Х
           </button>
         </li>
       </ul>
@@ -193,38 +194,38 @@
         <!-- class="catefory-item"  может не нужен? -->
         <li class="catefory-item">
           <a class="category-link" href="#nowhere">
+            <div class="category-ico-wrapper v-reality"></div>
             <h3>Виртуальная реальность</h3>
-            <div class="category-ico-wrapper"></div>
           </a>
         </li>
         <li class="catefory-item">
           <a class="category-link" href="catalog.html">
+            <div class="category-ico-wrapper monopod"></div>
             <h3>Моноподы для селфи</h3>
-            <div class="category-ico-wrapper"></div>
           </a>
         </li>
         <li class="catefory-item">
           <a class="category-link" href="#nowhere">
+            <div class="category-ico-wrapper action-camera"></div>
             <h3>Экшн-камеры</h3>
-            <div class="category-ico-wrapper"></div>
           </a>
         </li>
         <li class="catefory-item">
           <a class="category-link" href="#nowhere">
+            <div class="category-ico-wrapper fitness-bracelet"></div>
             <h3>Фитнес- браслеты</h3>
-            <div class="category-ico-wrapper"></div>
           </a>
         </li>
         <li class="catefory-item">
           <a class="category-link" href="#nowhere">
+            <div class="category-ico-wrapper smart-watch"></div>
             <h3>Умные часы</h3>
-            <div class="category-ico-wrapper"></div>
           </a>
         </li>
         <li class="catefory-item">
           <a class="category-link" href="#nowhere">
+            <div class="category-ico-wrapper quadcopter"></div>
             <h3>Квадрокоптеры</h3>
-            <div class="category-ico-wrapper"></div>
           </a>
         </li>
       </ul>
